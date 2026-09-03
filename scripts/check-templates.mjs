@@ -7,6 +7,7 @@ import { readFileSync } from "node:fs";
 const collections = [
   { script: "scripts/new-event.mjs", loader: "src/lib/events.ts" },
   { script: "scripts/new-member.mjs", loader: "src/lib/board.ts" },
+  { script: "scripts/new-sponsor.mjs", loader: "src/lib/sponsors.ts" },
 ];
 
 let failed = false;

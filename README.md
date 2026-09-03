@@ -91,6 +91,30 @@ that isn't there, so a typo can't ship as a broken image. Frontmatter lines
 starting with `#` are comments, which is how the generated template carries the
 optional fields.
 
+## Adding a sponsor
+
+```bash
+npm run new:sponsor -- "Acme AB" 1
+```
+
+Writes `src/content/sponsors/acme-ab.md`. Logos go in `public/sponsors/`.
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| `name` | yes | Shown as text when there's no logo, and used as the logo's alt text. |
+| `order` | yes | Whole number. Lowest first along the rail. |
+| `logo` | no | Path under `public/`. The rail is dark, so a light mark works best. |
+| `url` | no | http(s) URL. Makes the tile a link. |
+| `background` | no | `light` (default) or `dark` — whichever ground the logo needs. |
+
+Most brands publish a dark mark, which is why the tile is a light chip by
+default. A brand that only publishes a white one (Kalmar Science Park, say)
+sets `background: dark` and gets the page's own ground instead.
+
+With no sponsor files the section falls back to the dashed placeholder rail, so
+it never renders empty. A short list is repeated until it's wider than the
+viewport, otherwise the loop shows a gap.
+
 ## Layout
 
 | Path | What |
@@ -99,7 +123,9 @@ optional fields.
 | `src/app/_components/` | every non-routable component, incl. section components |
 | `src/content/events/` | one markdown file per event |
 | `src/content/board/` | one markdown file per board member |
+| `src/content/sponsors/` | one markdown file per sponsor |
 | `src/lib/frontmatter.ts` | shared markdown reader for both collections |
 | `src/lib/events.ts` | reads and validates the events folder |
 | `src/lib/board.ts` | reads and validates the board folder |
+| `src/lib/sponsors.ts` | reads and validates the sponsors folder |
 | `src/lib/content.ts` | tracks, tape, nav and contact copy |
