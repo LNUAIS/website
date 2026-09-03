@@ -17,23 +17,23 @@ export function Board() {
           Elected each spring at the annual meeting. Any student can stand for a
           seat.
         </p>
-      </Shell>
 
-      <div className="rail overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_5%,#000_95%,transparent)]">
-        <div
-          className="marquee flex w-max"
-          style={{ animationDuration: "60s" }}
-        >
-          {[0, 1].map((copy) => (
-            // The keyframe slides the track -50%, so it holds exactly two runs.
-            <ul key={copy} aria-hidden={copy === 1} className="flex">
-              {board.map((m) => (
-                <Member key={m.slug} member={m} />
-              ))}
-            </ul>
-          ))}
+        <div className="rail overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_5%,#000_95%,transparent)]">
+          <div
+            className="marquee flex w-max"
+            style={{ animationDuration: "60s" }}
+          >
+            {[0, 1].map((copy) => (
+              // The keyframe slides the track -50%, so it holds exactly two runs.
+              <ul key={copy} aria-hidden={copy === 1} className="flex">
+                {board.map((m) => (
+                  <Member key={m.slug} member={m} />
+                ))}
+              </ul>
+            ))}
+          </div>
         </div>
-      </div>
+      </Shell>
     </Section>
   );
 }
@@ -42,7 +42,7 @@ function Member({ member }: { member: BoardMember }) {
   return (
     <li className="mr-5.5 w-60 flex-none">
       {member.photo ? (
-        <div className="relative aspect-4/5 overflow-hidden rounded-[3px] bg-chalk/5">
+        <div className="relative aspect-4/5 overflow-hidden rounded-[3px] border border-chalk/15 bg-chalk/5">
           <Image
             src={member.photo}
             alt={member.name}

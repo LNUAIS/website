@@ -65,7 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         <footer className="px-5 pt-15 pb-8 sm:px-10">
           <div className="mx-auto max-w-[1180px]">
-            <div className="grid gap-10 border-b border-chalk/12 pb-11 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr]">
+            <div className="flex flex-col gap-10 border-b border-chalk/12 pb-11 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <div className="mb-4 flex items-center gap-3">
                   <Mark className="w-[60px] shrink-0 text-gold" />
@@ -78,18 +78,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   Run by students, open to everyone.
                 </p>
               </div>
-
-              <FooterColumn title="SITE">
-                {navLinks.map((l) => (
-                  <Link
-                    key={l.href}
-                    href={l.href}
-                    className="text-chalk/70 transition-colors hover:text-gold"
-                  >
-                    {l.label}
-                  </Link>
-                ))}
-              </FooterColumn>
 
               <FooterColumn title="REACH US">
                 <a href={`mailto:${CONTACT_EMAIL}`} className="text-gold">
