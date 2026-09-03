@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { events } from "@/lib/content";
 import { Eyebrow, Section, Shell } from "./chrome";
 
@@ -10,14 +9,14 @@ export function Events() {
       <Shell>
         <div className="mb-14 flex flex-wrap items-end justify-between gap-8">
           <div>
-            <Eyebrow>02 — FUTURE EVENTS</Eyebrow>
+            <Eyebrow>02 — PAST EVENTS</Eyebrow>
             <h2 className="text-[38px] leading-none font-black tracking-[-0.04em] sm:text-[56px]">
-              What&rsquo;s coming up
+              What we&rsquo;ve run
             </h2>
           </div>
           <p className="max-w-[340px] text-[14.5px] leading-[1.6] text-chalk/55">
-            Free for members, open to all students unless noted. Rooms are
-            announced the morning of the event.
+            Free for members, open to all students unless noted. Nothing is on
+            the calendar right now — join and you&rsquo;ll hear first.
           </p>
         </div>
 
@@ -54,7 +53,7 @@ function EventRow({ event }: { event: Event }) {
             {event.kind}
           </span>
           <span className="font-mono text-[10.5px] tracking-[0.06em] text-chalk/42">
-            {event.time} · {event.place}
+            {event.place}
           </span>
         </div>
         <h3 className="text-[21px] font-extrabold tracking-[-0.025em] text-pretty sm:text-[27px]">
@@ -63,12 +62,6 @@ function EventRow({ event }: { event: Event }) {
         <p className="mt-2.5 max-w-[660px] text-[15.5px] leading-[1.58] text-chalk/62 text-pretty">
           {event.blurb}
         </p>
-        <Link
-          href="#contact"
-          className="mt-4 inline-block rounded-[2px] border border-chalk/24 px-4.5 py-2.5 text-[13.5px] font-semibold transition-colors hover:border-gold hover:text-gold"
-        >
-          Sign up →
-        </Link>
       </div>
     </li>
   );
