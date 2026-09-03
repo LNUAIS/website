@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
 import { CONTACT_EMAIL, navLinks } from "@/lib/content";
-import { Mark } from "./mark";
+import { Mark } from "./_components/mark";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -52,7 +52,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 {l.label}
               </Link>
             ))}
-
           </nav>
         </header>
 
