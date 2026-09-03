@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LNU AI Society
 
-## Getting Started
-
-First, run the development server:
+The website for the LNU AI Society, a student society at Linnaeus University.
+Next.js App Router, Tailwind v4, Biome. No database.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build
+npm run lint     # biome check
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Adding an event
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run new:event -- "Spring Kickoff" 2026-04-10
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+That writes `src/content/events/spring-kickoff.md`. Fill it in and you're done —
+no code changes, and `next dev` picks it up without a restart.
 
-## Learn More
+```markdown
+---
+date: 2026-04-10
+kind: WORKSHOP
+place: VÄXJÖ · BUILDING M
+title: Spring Kickoff
+link: https://luma.com/xxxxxxxx
+---
 
-To learn more about Next.js, take a look at the following resources:
+One paragraph describing the event. This is the blurb under the title.
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Field | Required | Notes |
+| --- | --- | --- |
+| `date` | yes | `YYYY-MM-DD`. The only place the date lives. |
+| `kind` | yes | Badge text. Uppercase, e.g. `HACKATHON`. |
+| `place` | yes | Shown next to the badge. Uppercase. |
+| `title` | yes | May contain colons — only the first one separates key from value. |
+| `link` | no | Registration URL. Renders `Sign up →`, but only on upcoming events. |
+| body | yes | Everything after the closing `---` becomes the blurb. |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Conventions:
 
-## Deploy on Vercel
+- **Filename is the slug**, not the date — `spring-kickoff.md`. Only the
+  frontmatter `date` decides ordering and placement.
+- **Events dated today or later** appear under "What's coming up", soonest
+  first. Everything else falls under "Past events", newest first. The section
+  headings follow automatically.
+- **`_`-prefixed files are ignored** — use `_draft.md` for work in progress.
+  Any other `.md` in the folder is treated as an event.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Mistakes fail `npm run build` with the filename rather than rendering wrong:
+a missing or unknown field (`url:` instead of `link:`), a malformed date, or a
+`link` that isn't an http(s) URL.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Layout
+
+| Path | What |
+| --- | --- |
+| `src/app/page.tsx` | the one route, composed of sections |
+| `src/app/_components/` | every non-routable component, incl. section components |
+| `src/content/events/` | one markdown file per event |
+| `src/lib/events.ts` | reads and validates that folder |
+| `src/lib/content.ts` | board, tracks, tape and nav copy |

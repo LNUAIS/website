@@ -6,6 +6,8 @@ import { Hero } from "./_components/hero";
 import { Sponsors } from "./_components/sponsors";
 import { Tape } from "./_components/tape";
 
+export const revalidate = 3600;
+
 export default function Home() {
   return (
     <main>
