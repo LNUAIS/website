@@ -32,6 +32,7 @@ date: ${date}
 kind: WORKSHOP
 place: VÄXJÖ
 title: ${title}
+# link: https://luma.com/
 ---
 
 One paragraph describing the event. This is the blurb under the title.

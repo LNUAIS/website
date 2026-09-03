@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check",
+    "lint": "biome check && node scripts/check-templates.mjs",
     "format": "biome format --write",
     "new:event": "node scripts/new-event.mjs",
     "new:member": "node scripts/new-member.mjs"

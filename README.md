@@ -69,7 +69,7 @@ name: Ada Lindqvist
 role: HEAD OF RESEARCH
 order: 9
 linkedin: https://www.linkedin.com/in/ada/
-photo: /board/ada-lindqvist.jpg
+photo: /board/ada-lindqvist.webp
 committee: true
 ---
 
@@ -82,7 +82,7 @@ One sentence on what this role does.
 | `role` | yes | Uppercased for you by the script, e.g. `TREASURER`. |
 | `order` | yes | Whole number. Lowest first along the rail. |
 | `linkedin` | no | http(s) URL. No link, no icon. |
-| `photo` | no | Path under `public/`. Without one you get the PORTRAIT placeholder. |
+| `photo` | no | Path under `public/`. WebP, ~600px wide. Without one you get the PORTRAIT placeholder. |
 | `committee` | no | `true` for appointed roles — they get a COMMITTEE tag. |
 | body | no | One sentence, shown under the role. |
 

@@ -1,6 +1,7 @@
 import { CONTACT_EMAIL } from "@/lib/content";
 import { Eyebrow, Section, Shell } from "./chrome";
 import { ContactForm } from "./contact-form";
+import { SocialLinks } from "./social-links";
 
 export function Contact() {
   return (
@@ -26,6 +27,16 @@ export function Contact() {
             >
               {CONTACT_EMAIL}
             </a>
+          </div>
+
+          <div className="mt-8">
+            <div className="mb-3.5 font-mono text-[10px] tracking-[0.1em] text-chalk/45">
+              OR FIND US HERE
+            </div>
+            <SocialLinks />
+            <p className="mt-3.5 text-[13.5px] leading-[1.55] text-chalk/45">
+              We post every event on Instagram.
+            </p>
           </div>
         </div>
 

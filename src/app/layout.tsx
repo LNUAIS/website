@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
-import { CONTACT_EMAIL, navLinks, socialLinks } from "@/lib/content";
+import { CONTACT_EMAIL, navLinks } from "@/lib/content";
 import { Mark } from "./_components/mark";
-import { SocialIcon } from "./_components/social-icon";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -66,7 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         <footer className="px-5 pt-15 pb-8 sm:px-10">
           <div className="mx-auto max-w-[1180px]">
-            <div className="grid gap-10 border-b border-chalk/12 pb-11 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+            <div className="grid gap-10 border-b border-chalk/12 pb-11 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr]">
               <div>
                 <div className="mb-4 flex items-center gap-3">
                   <Mark className="w-[60px] shrink-0 text-gold" />
@@ -90,23 +89,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                     {l.label}
                   </Link>
                 ))}
-              </FooterColumn>
-
-              <FooterColumn title="ELSEWHERE">
-                <div className="flex items-center gap-4">
-                  {socialLinks.map((l) => (
-                    <a
-                      key={l.label}
-                      href={l.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={l.label}
-                      className="text-chalk/70 transition-colors hover:text-gold"
-                    >
-                      <SocialIcon name={l.label} />
-                    </a>
-                  ))}
-                </div>
               </FooterColumn>
 
               <FooterColumn title="REACH US">

@@ -12,19 +12,11 @@ export function Events() {
   return (
     <Section id="events">
       <Shell>
-        <div className="mb-14 flex flex-wrap items-end justify-between gap-8">
-          <div>
-            <Eyebrow>02 — EVENTS</Eyebrow>
-            <h2 className="text-[38px] leading-none font-black tracking-[-0.04em] sm:text-[56px]">
-              {upcoming.length > 0 ? "What’s coming up" : "What we’ve run"}
-            </h2>
-          </div>
-          <p className="max-w-[340px] text-[14.5px] leading-[1.6] text-chalk/55">
-            Free for members, open to all students unless noted.{" "}
-            {upcoming.length > 0
-              ? "Rooms are announced the morning of the event."
-              : "Nothing is on the calendar right now — get in touch and we’ll let you know."}
-          </p>
+        <div className="mb-14">
+          <Eyebrow>02 — EVENTS</Eyebrow>
+          <h2 className="text-[38px] leading-none font-black tracking-[-0.04em] sm:text-[56px]">
+            {upcoming.length > 0 ? "What’s coming up" : "What we’ve run"}
+          </h2>
         </div>
 
         {upcoming.length > 0 && (

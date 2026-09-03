@@ -32,7 +32,7 @@ name: ${name}
 role: ${role.toUpperCase()}
 order: ${order}
 # linkedin: https://www.linkedin.com/in/${slug}/
-# photo: /board/${slug}.jpg
+# photo: /board/${slug}.webp
 # committee: true
 ---
 `;

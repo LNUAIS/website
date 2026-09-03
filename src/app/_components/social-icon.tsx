@@ -14,7 +14,12 @@ export function SocialIcon({ name }: { name: string }) {
   // Fall back to the label so a new entry in socialLinks is never an invisible link.
   if (!d) return <span className="text-sm">{name}</span>;
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className="size-5">
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      className="size-5"
+    >
       <path d={d} />
     </svg>
   );
