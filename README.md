@@ -54,6 +54,43 @@ Mistakes fail `npm run build` with the filename rather than rendering wrong:
 a missing or unknown field (`url:` instead of `link:`), a malformed date, or a
 `link` that isn't an http(s) URL.
 
+## Adding a board member
+
+```bash
+npm run new:member -- "Ada Lindqvist" "Head of Research" 9
+```
+
+That writes `src/content/board/ada-lindqvist.md` with the optional fields
+commented out. Uncomment what applies, no code changes, no restart.
+
+```markdown
+---
+name: Ada Lindqvist
+role: HEAD OF RESEARCH
+order: 9
+linkedin: https://www.linkedin.com/in/ada/
+photo: /board/ada-lindqvist.jpg
+committee: true
+---
+
+One sentence on what this role does.
+```
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| `name` | yes | |
+| `role` | yes | Uppercased for you by the script, e.g. `TREASURER`. |
+| `order` | yes | Whole number. Lowest first along the rail. |
+| `linkedin` | no | http(s) URL. No link, no icon. |
+| `photo` | no | Path under `public/`. Without one you get the PORTRAIT placeholder. |
+| `committee` | no | `true` for appointed roles — they get a COMMITTEE tag. |
+| body | no | One sentence, shown under the role. |
+
+Portraits go in `public/board/`. The build fails if a `photo` points at a file
+that isn't there, so a typo can't ship as a broken image. Frontmatter lines
+starting with `#` are comments, which is how the generated template carries the
+optional fields.
+
 ## Layout
 
 | Path | What |
@@ -61,5 +98,8 @@ a missing or unknown field (`url:` instead of `link:`), a malformed date, or a
 | `src/app/page.tsx` | the one route, composed of sections |
 | `src/app/_components/` | every non-routable component, incl. section components |
 | `src/content/events/` | one markdown file per event |
-| `src/lib/events.ts` | reads and validates that folder |
-| `src/lib/content.ts` | board, tracks, tape and nav copy |
+| `src/content/board/` | one markdown file per board member |
+| `src/lib/frontmatter.ts` | shared markdown reader for both collections |
+| `src/lib/events.ts` | reads and validates the events folder |
+| `src/lib/board.ts` | reads and validates the board folder |
+| `src/lib/content.ts` | tracks, tape, nav and contact copy |

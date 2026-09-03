@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
-    "new:event": "node scripts/new-event.mjs"
+    "new:event": "node scripts/new-event.mjs",
+    "new:member": "node scripts/new-member.mjs"
   },
   "dependencies": {
     "next": "16.3.4",
