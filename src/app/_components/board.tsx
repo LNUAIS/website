@@ -10,8 +10,8 @@ export function Board() {
           Who runs this
         </h2>
         <p className="mb-11 max-w-[560px] text-base leading-[1.6] text-chalk/60">
-          Elected each spring at the annual meeting. Anyone with a membership
-          can stand for a seat.
+          Elected each spring at the annual meeting. Any student can stand for a
+          seat.
         </p>
         <ul className="grid grid-cols-2 gap-5.5 lg:grid-cols-4">
           {board.map((m) => (

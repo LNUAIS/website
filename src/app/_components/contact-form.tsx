@@ -57,7 +57,7 @@ export function ContactForm() {
       <label className="grid gap-2">
         <span className={labelClass}>WHAT IS THIS ABOUT</span>
         <select name="topic" className={fieldClass}>
-          <option>Joining the society</option>
+          <option>Getting involved</option>
           <option>Speaking at an event</option>
           <option>Partnership or sponsorship</option>
           <option>Something else</option>

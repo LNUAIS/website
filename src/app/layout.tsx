@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Archivo, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
-import { CONTACT_EMAIL, navLinks } from "@/lib/content";
+import { CONTACT_EMAIL, navLinks, socialLinks } from "@/lib/content";
 import { Mark } from "./_components/mark";
+import { SocialIcon } from "./_components/social-icon";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -52,6 +53,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 {l.label}
               </Link>
             ))}
+            <Link
+              href="/#contact"
+              className="rounded-[2px] bg-gold px-[18px] py-2.5 font-semibold text-ink transition-colors hover:bg-gold-hi"
+            >
+              Contact
+            </Link>
           </nav>
         </header>
 
@@ -86,15 +93,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               </FooterColumn>
 
               <FooterColumn title="ELSEWHERE">
-                {["Instagram", "LinkedIn", "Discord"].map((label) => (
-                  <Link
-                    key={label}
-                    href="/#top"
-                    className="text-chalk/70 transition-colors hover:text-gold"
-                  >
-                    {label}
-                  </Link>
-                ))}
+                <div className="flex items-center gap-4">
+                  {socialLinks.map((l) => (
+                    <a
+                      key={l.label}
+                      href={l.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={l.label}
+                      className="text-chalk/70 transition-colors hover:text-gold"
+                    >
+                      <SocialIcon name={l.label} />
+                    </a>
+                  ))}
+                </div>
               </FooterColumn>
 
               <FooterColumn title="REACH US">

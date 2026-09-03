@@ -29,16 +29,16 @@ export function Hero() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3.5">
             <Link
-              href="#contact"
+              href="#events"
               className="rounded-[2px] bg-gold px-7 py-3.5 text-[15px] font-bold text-ink transition-colors hover:bg-gold-hi"
             >
-              Become a member
+              Upcoming events
             </Link>
             <Link
-              href="#events"
+              href="#contact"
               className="rounded-[2px] border border-chalk/28 px-7 py-3.5 text-[15px] font-semibold transition-colors hover:border-gold hover:text-gold"
             >
-              Upcoming events
+              Get in touch
             </Link>
           </div>
         </div>

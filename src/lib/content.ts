@@ -47,4 +47,10 @@ export const navLinks = [
   { href: "/#sponsors", label: "Sponsors" },
 ];
 
+export const socialLinks = [
+  { label: "Instagram", href: "https://www.instagram.com/lnuaisociety" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/lnuais/" },
+  { label: "Discord", href: "https://discord.gg/eMqEHwCpQ" },
+];
+
 export const CONTACT_EMAIL = "contact@lnuias.com";

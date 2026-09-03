@@ -12,8 +12,8 @@ export function Contact() {
             Write us a line
           </h2>
           <p className="mb-6.5 text-[16.5px] leading-[1.6] text-chalk/65 text-pretty">
-            Joining, a talk you want to give, a partnership, or a topic you
-            think we should cover. Fill this in and we&rsquo;ll open a
+            Getting involved, a talk you want to give, a partnership, or a topic
+            you think we should cover. Fill this in and we&rsquo;ll open a
             ready-made draft in your mail app, addressed to us.
           </p>
           <div className="rounded-[3px] border border-chalk/14 px-5.5 py-5">

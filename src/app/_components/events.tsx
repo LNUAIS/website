@@ -23,7 +23,7 @@ export function Events() {
             Free for members, open to all students unless noted.{" "}
             {upcoming.length > 0
               ? "Rooms are announced the morning of the event."
-              : "Nothing is on the calendar right now — join and you’ll hear first."}
+              : "Nothing is on the calendar right now — get in touch and we’ll let you know."}
           </p>
         </div>
 
