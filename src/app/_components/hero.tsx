@@ -4,7 +4,7 @@ import { InfinityMark } from "./infinity-mark";
 
 const stats = [
   ["180+", "MEMBERS"],
-  ["24", "EVENTS / YEAR"],
+  ["6", "EVENTS / YEAR"],
 ];
 
 export function Hero() {
