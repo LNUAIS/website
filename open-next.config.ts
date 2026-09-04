@@ -1,11 +1,12 @@
 import { defineCloudflareConfig } from "@opennextjs/cloudflare";
-import r2IncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/r2-incremental-cache";
+import kvIncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/kv-incremental-cache";
 
 export default {
   // The homepage sets `revalidate = 3600` so the upcoming/past event split
-  // isn't frozen at build time. That needs somewhere to keep the regenerated
-  // page, or every isolate re-renders it on its own — hence the R2 bucket.
-  ...defineCloudflareConfig({ incrementalCache: r2IncrementalCache }),
+  // isn't frozen at build time. The regenerated page needs somewhere to live,
+  // and the adapter's default cache is a no-op. Workers KV rather than R2:
+  // same job here, and R2 has to be enabled on the account first.
+  ...defineCloudflareConfig({ incrementalCache: kvIncrementalCache }),
 
   // OpenNext shells out to `npm run build` by default, and that script is this
   // adapter — so it has to be pointed at Next directly or it recurses forever.
