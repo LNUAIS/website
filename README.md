@@ -36,6 +36,7 @@ One paragraph describing the event. This is the blurb under the title.
 | `date` | yes | `YYYY-MM-DD`. The only place the date lives. |
 | `kind` | yes | Badge text. Uppercase, e.g. `HACKATHON`. |
 | `place` | yes | Shown next to the badge. Uppercase. |
+| `time` | no | Free text, e.g. `10:00–15:00`. Shown before the place. |
 | `title` | yes | May contain colons — only the first one separates key from value. |
 | `link` | no | Registration URL. Renders `Sign up →`, but only on upcoming events. |
 | body | yes | Everything after the closing `---` becomes the blurb. |

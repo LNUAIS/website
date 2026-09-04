@@ -5,6 +5,8 @@ export type LnuEvent = {
   date: Date;
   kind: string;
   place: string;
+  /** Free text, e.g. `17:00–19:00`. Omitted when we don't know it. */
+  time?: string;
   title: string;
   blurb: string;
   /** Optional registration URL — omit it and the sign-up button isn't rendered. */
@@ -16,7 +18,7 @@ export type LnuEvent = {
 };
 
 const REQUIRED = ["date", "kind", "place", "title"] as const;
-const ALLOWED = [...REQUIRED, "link"] as const;
+const ALLOWED = [...REQUIRED, "time", "link"] as const;
 
 // Dates are authored as plain `2025-12-11`, which parses as UTC midnight, so
 // every derived field has to be formatted in UTC or the day can slip by one.
@@ -45,6 +47,7 @@ export function getEvents(): LnuEvent[] {
         date,
         kind: field("kind") as string,
         place: field("place") as string,
+        time: field("time"),
         title: field("title") as string,
         blurb: body,
         link,

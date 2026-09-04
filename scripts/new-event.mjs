@@ -31,6 +31,7 @@ const file = `---
 date: ${date}
 kind: WORKSHOP
 place: VÄXJÖ
+# time: 17:00–19:00
 title: ${title}
 # link: https://luma.com/
 ---

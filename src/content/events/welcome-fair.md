@@ -2,6 +2,7 @@
 date: 2026-09-10
 kind: WORKSHOP
 place: Building K
+time: 10:00–15:00
 title: Welcome Fair
 ---
 

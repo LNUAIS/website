@@ -47,17 +47,18 @@ export function Events() {
 
 function EventRow({ event, cta }: { event: LnuEvent; cta?: boolean }) {
   return (
-    <li className="grid grid-cols-[64px_24px_1fr] items-stretch sm:grid-cols-[132px_34px_1fr]">
+    <li className="grid grid-cols-[84px_24px_1fr] items-stretch sm:grid-cols-[132px_34px_1fr]">
       <div className="pr-4 pb-11 text-right sm:pr-6">
         <div className="text-[26px] leading-[0.9] font-black tracking-[-0.05em] text-gold sm:text-[38px]">
           {event.day}
         </div>
-        <div className="mt-1.75 font-mono text-[11px] tracking-[0.1em] text-chalk/50">
+        <div className="mt-1.75 font-mono text-[10px] tracking-[0.04em] text-chalk/50 sm:text-[11px] sm:tracking-[0.1em]">
           {event.month} {event.year}
         </div>
         <div className="mt-1.5 hidden text-[13px] text-chalk/40 sm:block">
           {event.weekday}
         </div>
+        {event.time && <EventTime time={event.time} />}
       </div>
 
       <Rail />
@@ -89,6 +90,20 @@ function EventRow({ event, cta }: { event: LnuEvent; cta?: boolean }) {
         )}
       </div>
     </li>
+  );
+}
+
+/**
+ * Stacked numerals, sized and spaced to stay under the day rather than rival
+ * it — the whole date column has to read as one block, not two headlines.
+ */
+function EventTime({ time }: { time: string }) {
+  const [from, to] = time.split(/\s*[\u2013\u2014-]\s*/);
+  return (
+    <div className="mt-2 text-[15px] leading-[1.2] font-bold tracking-[-0.03em] tabular-nums sm:mt-2.5 sm:text-[20px]">
+      <div className="text-chalk/85">{from}</div>
+      {to && <div className="text-chalk/32">{to}</div>}
+    </div>
   );
 }
 
