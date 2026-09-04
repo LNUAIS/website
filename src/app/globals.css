@@ -41,8 +41,12 @@ body {
   animation: marquee 30s linear infinite;
 }
 
-.rail:hover .marquee {
-  animation-play-state: paused;
+/* Pause to read — but only where a pointer can actually hover. On touch, a tap
+   latches :hover and the rail would stay frozen until you tapped elsewhere. */
+@media (hover: hover) {
+  .rail:hover .marquee {
+    animation-play-state: paused;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
