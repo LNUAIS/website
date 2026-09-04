@@ -28,8 +28,10 @@ jobs:
       # its loader, before anything reaches Cloudflare.
       - run: npm run lint
 
-      - run: npx tsc --noEmit
-
+      # No separate `tsc --noEmit` here: next-env.d.ts is gitignored and
+      # .next/types is generated, so on a clean checkout tsc has neither and
+      # fails on LayoutProps and the .png import. `next build` generates both
+      # and type-checks as part of the build anyway.
       - run: npx opennextjs-cloudflare build
 
       - uses: cloudflare/wrangler-action@v3
