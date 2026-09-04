@@ -1,23 +1,7 @@
 // ponytail: hardcoded until someone other than a dev needs to edit these.
 // Swap for a CMS or the Luma API (luma.com/docs/api) when that day comes.
 
-export const tracks = [
-  {
-    label: "TRACK 01",
-    title: "Learn the stack",
-    body: "Weekly hands-on workshops: prompting, fine-tuning, retrieval, evals, deployment. Taught by members, for members, with a separate beginner track.",
-  },
-  {
-    label: "TRACK 02",
-    title: "Ship something real",
-    body: "Project teams take one problem per semester from idea to working demo, then present it openly so the work outlives the meetup that started it.",
-  },
-  {
-    label: "TRACK 03",
-    title: "Question the default",
-    body: "A standing reading group on capability, policy and failure modes. Enthusiasm is welcome here. So is disagreement, with sources.",
-  },
-];
+export const activities = ["Workshops", "Guest talks", "Hackathons", "Meetups"];
 
 export const tape = [
   "WORKSHOPS",
