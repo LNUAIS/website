@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 // Animated version of the logo: a tapered ribbon swept along a lemniscate,
 // shaded head-to-tail so it reads as an ouroboros. Slider values are baked in.
-const SPEED = 1.49;
+const SPEED = 0.6;
 const HALF_WIDTH = 0.13 * 0.57;
 const TAPER = 0.8;
 const SQUISH = 0.23;

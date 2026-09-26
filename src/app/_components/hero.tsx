@@ -15,7 +15,7 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden border-b border-chalk/10 px-5 py-16 sm:px-10 lg:h-[680px] lg:py-0"
     >
-      <InfinityMark className="pointer-events-none absolute top-1/2 left-1/2 hidden w-[1320px] -translate-x-1/2 -translate-y-1/2 opacity-40 lg:block" />
+      <InfinityMark className="pointer-events-none absolute top-1/2 left-1/2 hidden w-[1320px] -translate-x-1/2 -translate-y-1/2 opacity-[0.07] lg:block" />
 
       <div className="relative mx-auto flex h-full max-w-[1180px] flex-col items-center gap-20 lg:justify-center lg:gap-0">
         <div className="flex max-w-[600px] flex-col items-center text-center">
@@ -54,7 +54,7 @@ export function Hero() {
           >
             <div className="border border-chalk/22 bg-panel px-6.5 py-6 shadow-[0_26px_60px_rgba(0,0,0,0.6)]">
               <div className="font-mono text-[10px] tracking-[0.14em] text-chalk/62">
-                RECENTLY RUN
+                RECENT EVENTS
               </div>
               <ol className="mt-4 flex flex-col gap-2.75 font-mono text-[12.5px]">
                 {past.map((ev, i) => (
