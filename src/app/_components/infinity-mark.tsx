@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 // Animated version of the logo: a tapered ribbon swept along a lemniscate,
 // shaded head-to-tail so it reads as an ouroboros. Slider values are baked in.
-const SPEED = 1.49;
+const SPEED = 0.6;
 const HALF_WIDTH = 0.13 * 0.57;
 const TAPER = 0.8;
 const SQUISH = 0.23;
@@ -128,8 +128,10 @@ function start(host: HTMLElement) {
       inn[i * 2 + 1] = OY + (ix * SR + iy * CR) * S;
     }
 
-    for (let m = 0; m < N - 1; m++) {
-      const j = m + 1;
+    // Wrap the last quad back onto sample 0 — stopping at N-1 leaves the ring
+    // open, and that missing sliver reads as a tear once the mark is scaled up.
+    for (let m = 0; m < N; m++) {
+      const j = (m + 1) % N;
       const b = (bri[m] + bri[j]) * 0.5;
       const hh = ((((phs[m] + phs[j]) * 0.5) % 360) + 360) % 360;
       const c = `hsl(${hh.toFixed(1)},${SATURATION}%,${(8 + 46 * b).toFixed(1)}%)`;
