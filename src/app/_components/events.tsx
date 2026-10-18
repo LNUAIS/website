@@ -28,9 +28,12 @@ export function Events() {
         )}
 
         {upcoming.length > 0 && past.length > 0 && (
-          <h3 className="mt-4 mb-10 font-mono text-[11px] tracking-[0.12em] text-chalk/45">
-            PAST EVENTS
-          </h3>
+          <div className="grid grid-cols-[84px_24px_1fr] sm:grid-cols-[132px_34px_1fr]">
+            <h3 className="pt-4 pb-10 font-mono text-[11px] tracking-[0.12em] whitespace-nowrap text-chalk/45">
+              PAST EVENTS
+            </h3>
+            <Rail dot={false} />
+          </div>
         )}
 
         {past.length > 0 && (
@@ -107,11 +110,11 @@ function EventTime({ time }: { time: string }) {
   );
 }
 
-function Rail() {
+function Rail({ dot = true }: { dot?: boolean }) {
   return (
     <div aria-hidden className="relative flex justify-center">
       <div className="w-px bg-chalk/15" />
-      <div className="absolute top-2 size-3.25 rounded-full bg-gold ring-4 ring-ink" />
+      {dot && <div className="absolute top-2 size-3.25 rounded-full bg-gold" />}
     </div>
   );
 }
