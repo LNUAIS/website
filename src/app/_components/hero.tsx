@@ -27,6 +27,12 @@ export function Hero() {
             A place to actually use the things everyone is talking about.
           </h1>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              href="#events"
+              className="rounded-[2px] bg-gold px-7 py-3.5 text-[15px] font-bold text-ink transition-colors hover:bg-gold-hi"
+            >
+              Upcoming events
+            </Link>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdpGScG5keRrPnXk3q-qDLXzQoC4Ij8i4bUT7ir-KTeFB4m4A/viewform?usp=header"
               aria-label="Join LNU AI Society"
@@ -42,18 +48,6 @@ export function Hero() {
                 <span />
               </span>
             </a>
-            <Link
-              href="#events"
-              className="rounded-[2px] bg-gold px-7 py-3.5 text-[15px] font-bold text-ink transition-colors hover:bg-gold-hi"
-            >
-              Upcoming events
-            </Link>
-            <Link
-              href="#contact"
-              className="rounded-[2px] border border-chalk/28 px-7 py-3.5 text-[15px] font-bold transition-colors hover:border-gold hover:text-gold"
-            >
-              Get in touch
-            </Link>
           </div>
         </div>
 

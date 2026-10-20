@@ -58,12 +58,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 {l.label}
               </Link>
             ))}
-            <Link
+            {/* A native anchor scrolls again when #contact is already in the URL. */}
+            <a
               href="/#contact"
               className="rounded-[2px] bg-gold px-[18px] py-2.5 font-semibold text-ink transition-colors hover:bg-gold-hi"
             >
               Contact
-            </Link>
+            </a>
           </nav>
         </header>
 
