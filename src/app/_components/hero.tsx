@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getEvents, type LnuEvent } from "@/lib/events";
 import { InfinityMark } from "./infinity-mark";
+import styles from "./join-button.module.css";
 
 export function Hero() {
   const today = new Date();
@@ -32,12 +33,21 @@ export function Hero() {
             >
               Upcoming events
             </Link>
-            <Link
-              href="#contact"
-              className="rounded-[2px] border border-chalk/28 px-7 py-3.5 text-[15px] font-bold transition-colors hover:border-gold hover:text-gold"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdpGScG5keRrPnXk3q-qDLXzQoC4Ij8i4bUT7ir-KTeFB4m4A/viewform?usp=header"
+              aria-label="Join LNU AI Society"
+              className={`${styles.join} rounded-[2px] border border-gold px-7 py-3.5 text-[15px] font-bold text-gold`}
             >
-              Get in touch
-            </Link>
+              Join
+              <span className={styles.particles} aria-hidden="true">
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+              </span>
+            </a>
           </div>
         </div>
 
