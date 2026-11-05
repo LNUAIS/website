@@ -2,7 +2,7 @@
 date: 2026-10-21
 kind: PANEL & MINI-HACKATHON
 place: GRO COMMUNITY, SIGN · VÄXJÖ
-time: From 12:00
+time: From 14:30
 title: GRO to the Future
 link: https://luma.com/b86tde9n
 ---
